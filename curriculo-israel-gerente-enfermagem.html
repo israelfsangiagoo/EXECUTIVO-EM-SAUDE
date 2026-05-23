@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo – Israel F. Santiago</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #0a4a38;
+    --verde-medio: #1a6b54;
+    --verde-claro: #e8f0ed;
+    --ouro: #c9a96e;
+    --ouro-claro: #e8d8b8;
+    --creme: #faf8f4;
+    --texto: #1e1e1e;
+    --cinza: #5a5a5a;
+    --cinza-claro: #e0ddd7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e5e0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+
+  .page {
+    background: var(--creme);
+    width: 210mm;
+    max-width: 100%;
+    min-height: 297mm;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.18);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--verde);
+    padding: 44px 52px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.12);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: 60px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.07);
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .name-block {}
+
+  .pre-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--ouro);
+    margin-bottom: 8px;
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -0.5px;
+  }
+
+  .name span {
+    font-weight: 600;
+    color: var(--ouro);
+  }
+
+  .title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+  }
+
+  .contact-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 5px;
+    font-weight: 300;
+  }
+
+  .contact-item .dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--ouro);
+    flex-shrink: 0;
+  }
+
+  /* ── GOLD BAR ── */
+  .gold-bar {
+    height: 3px;
+    background: linear-gradient(90deg, var(--ouro), var(--ouro-claro), transparent);
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 0;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--verde-claro);
+    padding: 36px 28px;
+    border-right: 1px solid var(--cinza-claro);
+  }
+
+  .sidebar-section {
+    margin-bottom: 32px;
+  }
+
+  .sidebar-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .sidebar-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ouro);
+  }
+
+  .sidebar-item {
+    font-size: 11.5px;
+    color: var(--cinza);
+    margin-bottom: 6px;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  .sidebar-item strong {
+    color: var(--texto);
+    font-weight: 600;
+    display: block;
+    font-size: 12px;
+  }
+
+  /* Competências badges */
+  .badge-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .badge {
+    background: #fff;
+    border: 1px solid var(--ouro);
+    color: var(--verde);
+    font-size: 9.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+  }
+
+  /* Barra de habilidades */
+  .skill-row {
+    margin-bottom: 9px;
+  }
+
+  .skill-label {
+    font-size: 10.5px;
+    color: var(--texto);
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+
+  .skill-bar {
+    height: 3px;
+    background: rgba(10,74,56,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--verde), var(--ouro));
+    border-radius: 2px;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 36px 40px;
+  }
+
+  .main-section {
+    margin-bottom: 28px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-icon svg {
+    width: 13px; height: 13px;
+    fill: var(--ouro);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--verde);
+    letter-spacing: 0.3px;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--cinza-claro);
+  }
+
+  /* Perfil */
+  .perfil-text {
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--cinza);
+    font-weight: 300;
+    border-left: 2px solid var(--ouro);
+    padding-left: 14px;
+  }
+
+  /* Experiência */
+  .exp-item {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 16px;
+  }
+
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ouro);
+  }
+
+  .exp-item::after {
+    content: '';
+    position: absolute;
+    left: 2.5px; top: 16px;
+    width: 1px;
+    height: calc(100% - 6px);
+    background: var(--cinza-claro);
+  }
+
+  .exp-item:last-child::after {
+    display: none;
+  }
+
+  .exp-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .exp-cargo {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--texto);
+    line-height: 1.3;
+  }
+
+  .exp-periodo {
+    font-size: 10px;
+    color: var(--ouro);
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .exp-empresa {
+    font-size: 11px;
+    color: var(--verde-medio);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .exp-desc {
+    font-size: 11px;
+    color: var(--cinza);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .exp-desc li {
+    margin-bottom: 3px;
+    padding-left: 10px;
+    position: relative;
+    list-style: none;
+  }
+
+  .exp-desc li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--ouro);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Formação */
+  .edu-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .edu-year {
+    font-size: 10px;
+    color: var(--ouro);
+    font-weight: 600;
+    min-width: 38px;
+    padding-top: 1px;
+  }
+
+  .edu-content {}
+
+  .edu-curso {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--texto);
+    line-height: 1.3;
+  }
+
+  .edu-inst {
+    font-size: 10.5px;
+    color: var(--cinza);
+    font-weight: 400;
+    margin-top: 1px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--verde);
+    padding: 14px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .footer-coren {
+    font-size: 9.5px;
+    color: var(--ouro);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: none; padding: 0; }
+    .page { box-shadow: none; width: 210mm; }
+  }
+
+  @media (max-width: 640px) {
+    .page { width: 100%; }
+    .header { padding: 32px 24px 28px; }
+    .header-inner { flex-direction: column; align-items: flex-start; }
+    .contact-block { text-align: left; }
+    .contact-item { justify-content: flex-start; }
+    .body { grid-template-columns: 1fr; }
+    .main { padding: 24px 24px; }
+    .sidebar { padding: 24px 24px; }
+    .footer { padding: 14px 24px; flex-direction: column; gap: 4px; text-align: center; }
+    .name { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="name-block">
+        <p class="pre-name">Enfermagem · Gestão Hospitalar</p>
+        <h1 class="name">Israel F. <span>Santiago</span></h1>
+        <p class="title">Gerente de Enfermagem &amp; Gestão de Pessoas</p>
+      </div>
+      <div class="contact-block">
+        <div class="contact-item"><span>Rio de Janeiro – RJ</span><span class="dot"></span></div>
+        <div class="contact-item"><span>israelfsantiagoo@email.com.br</span><span class="dot"></span></div>
+        <div class="contact-item"><span>(21) 9 ····-····</span><span class="dot"></span></div>
+        <div class="contact-item"><span>linkedin.com/in/israelfsantiago</span><span class="dot"></span></div>
+        <div class="contact-item"><span>israelfsantiagoo.com.br</span><span class="dot"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="gold-bar"></div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">Registro Profissional</p>
+        <div class="sidebar-item">
+          <strong>COREN-RJ</strong>
+          Enfermeiro Especialista<br>Registro Ativo
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">Formação</p>
+        <div class="sidebar-item">
+          <strong>Pós-Graduação</strong>
+          Gestão em Saúde e<br>Liderança Hospitalar
+        </div>
+        <div class="sidebar-item" style="margin-top:10px;">
+          <strong>Especialização</strong>
+          Enfermagem Geriátrica<br>e Gerontológica
+        </div>
+        <div class="sidebar-item" style="margin-top:10px;">
+          <strong>Graduação</strong>
+          Bacharelado em<br>Enfermagem
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">Áreas de Expertise</p>
+        <div class="badge-wrap">
+          <span class="badge">Geriatria</span>
+          <span class="badge">Pacientes Crônicos</span>
+          <span class="badge">Cuidados Paliativos</span>
+          <span class="badge">Gestão Hospitalar</span>
+          <span class="badge">Múltiplas Unidades</span>
+          <span class="badge">Saúde Ocupacional</span>
+          <span class="badge">Segurança do Paciente</span>
+          <span class="badge">Indicadores Assistenciais</span>
+          <span class="badge">Monitoramento Remoto</span>
+          <span class="badge">Protocolos Clínicos</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">Competências Técnicas</p>
+        <div class="skill-row">
+          <div class="skill-label">Gestão de Equipes</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:97%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Indicadores e KPIs</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Padronização de Processos</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Desenvolvimento de Lideranças</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Qualidade Hospitalar</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Educação Continuada</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-title">Competências Comportamentais</p>
+        <div class="sidebar-item">› Liderança Humanizada</div>
+        <div class="sidebar-item">› Inteligência Emocional</div>
+        <div class="sidebar-item">› Comunicação Assertiva</div>
+        <div class="sidebar-item">› Gestão de Conflitos</div>
+        <div class="sidebar-item">› Visão Sistêmica e Analítica</div>
+        <div class="sidebar-item">› Postura Executiva</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- PERFIL -->
+      <div class="main-section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <h2 class="section-title">Perfil Profissional</h2>
+          <div class="section-line"></div>
+        </div>
+        <p class="perfil-text">
+          Enfermeiro Especialista em Geriatria com sólida trajetória em gestão assistencial, liderança de equipes multidisciplinares e desenvolvimento de lideranças em saúde. Atua de forma estratégica na coordenação de operações em múltiplos contextos — hospitalar, ambulatorial e de saúde ocupacional —, com vivência aprofundada em pacientes crônicos, idosos frágeis e cuidados paliativos. Perfil analítico, resiliente e orientado a resultados, combinando postura executiva com escuta ativa e liderança humanizada. Experiência comprovada na padronização de protocolos, monitoramento de indicadores de performance e na criação de culturas organizacionais voltadas à segurança do paciente e excelência no cuidado.
+        </p>
+      </div>
+
+      <!-- EXPERIÊNCIA -->
+      <div class="main-section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.55 16.46 1 14.55 1c-1.22 0-2.18.51-2.82 1.31L12 2.96l-.73-.65C10.63 1.51 9.67 1 8.45 1 6.54 1 5 2.55 5 4.7c0 .44.11.86.18 1.3H3c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h17c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+          </div>
+          <h2 class="section-title">Experiência Profissional</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-cargo">Coordenador de Saúde Ocupacional</span>
+            <span class="exp-periodo">2022 – Atual</span>
+          </div>
+          <p class="exp-empresa">BR Med – Clínica de Medicina do Trabalho · Rio de Janeiro, RJ</p>
+          <ul class="exp-desc">
+            <li>Coordenação de equipe multidisciplinar de saúde, supervisionando processos assistenciais e operacionais da clínica.</li>
+            <li>Implementação e monitoramento de indicadores de desempenho clínico (SLAs, absenteísmo, produtividade).</li>
+            <li>Padronização de fluxos, protocolos clínicos e rotinas assistenciais, elevando a qualidade do atendimento.</li>
+            <li>Gestão de pessoas: desenvolvimento de equipes, feedbacks estruturados, mediação de conflitos e planos de ação.</li>
+            <li>Alinhamento estratégico entre operação assistencial e liderança executiva, atuando como elo entre Diretoria e equipes.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-cargo">Gestor de Saúde – Serviço de Monitoramento Geriátrico Remoto</span>
+            <span class="exp-periodo">2023 – Atual</span>
+          </div>
+          <p class="exp-empresa">Átria Saúde (Serviço Próprio) · Modelo Remoto – Rio de Janeiro, RJ</p>
+          <ul class="exp-desc">
+            <li>Criação e gestão de serviço de monitoramento remoto da saúde do idoso, atendendo famílias de pacientes em múltiplos estados.</li>
+            <li>Elaboração de protocolos clínicos voltados ao paciente geriátrico, com foco em doenças crônicas e prevenção de agravos.</li>
+            <li>Desenvolvimento de programas de Monitoramento de Doenças Crônicas (35–65 anos) e Cuidado Conectado Geriátrico (65–80 anos).</li>
+            <li>Gestão de indicadores assistenciais, adesão terapêutica e qualidade de vida do paciente idoso.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-cargo">Docente e Coordenador de Cursos de Extensão em Enfermagem</span>
+            <span class="exp-periodo">2022 – Atual</span>
+          </div>
+          <p class="exp-empresa">Cruz Vermelha Brasileira – Filial Rio de Janeiro · Rio de Janeiro, RJ</p>
+          <ul class="exp-desc">
+            <li>Planejamento, coordenação e facilitação de treinamentos para cuidadores e profissionais de saúde (foco em geriatria e gerontologia).</li>
+            <li>Desenvolvimento de material didático técnico e estratégico para capacitação de equipes assistenciais.</li>
+            <li>Formação de cuidadores em boas práticas, segurança do paciente e cuidados com o idoso.</li>
+            <li>Gestão de turmas, avaliação de desempenho e melhoria contínua dos programas educacionais.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- FORMAÇÃO -->
+      <div class="main-section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm-5 7.18V17l5 2.73 5-2.73v-6.82l-5 2.73-5-2.73z"/></svg>
+          </div>
+          <h2 class="section-title">Formação Acadêmica</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="edu-item">
+          <span class="edu-year">Pós</span>
+          <div class="edu-content">
+            <p class="edu-curso">Gestão em Saúde &amp; Liderança Hospitalar</p>
+            <p class="edu-inst">Instituição de Ensino Superior · Rio de Janeiro, RJ</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">Espec.</span>
+          <div class="edu-content">
+            <p class="edu-curso">Especialização em Enfermagem Geriátrica e Gerontológica</p>
+            <p class="edu-inst">Instituição de Ensino Superior · Rio de Janeiro, RJ</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">Grad.</span>
+          <div class="edu-content">
+            <p class="edu-curso">Bacharelado em Enfermagem</p>
+            <p class="edu-inst">Instituição de Ensino Superior · Rio de Janeiro, RJ</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /BODY -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="footer-text">Currículo atualizado · Maio 2026</span>
+    <span class="footer-coren">COREN-RJ · Enfermeiro Especialista em Geriatria</span>
+  </div>
+
+</div>
+</body>
+</html>
