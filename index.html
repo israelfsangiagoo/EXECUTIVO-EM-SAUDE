@@ -1073,9 +1073,20 @@
     #hero { grid-template-columns: 1fr; min-height: auto; }
     #hero::before { display: none; }
     .hero-left { padding: 100px 24px 40px; }
-    .hero-right { padding: 0 24px 60px; background: var(--verde); }
-    .hero-photo-wrapper { max-width: 100%; }
-    .hero-stats { max-width: 100%; }
+    .hero-right { padding: 48px 24px 60px; background: var(--verde); }
+    .hero-photo-wrapper {
+      width: 110px;
+      height: 110px;
+      max-width: 110px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      align-items: center;
+    }
+    .hero-photo-wrapper img {
+      border-radius: 50%;
+    }
+    .hero-stats { max-width: 100%; margin-top: 8px; }
 
     .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
     .sobre-left { position: static; }
@@ -1443,7 +1454,7 @@
           </div>
           <div class="contato-info-item">
             <div class="contato-info-dot"></div>
-            <span class="contato-info-text">@israelsantiago.com.br</span>
+            <span class="contato-info-text">@israelgeriatria.rj</span>
           </div>
           <div class="contato-info-item">
             <div class="contato-info-dot"></div>
